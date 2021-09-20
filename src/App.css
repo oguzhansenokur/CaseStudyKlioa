@@ -1,10 +1,12 @@
 .sidebar{
   background-color:whitesmoke;
-  min-height: 100vh;
+  min-height: 10%;
   max-width: 25vh;
   border-right:outset;
+  border-bottom: outset;
   border-color:black;
   border-width: 2px;  
+
 }
 
 .navbutton{

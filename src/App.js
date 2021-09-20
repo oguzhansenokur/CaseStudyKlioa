@@ -15,23 +15,25 @@ function App() {
   return (
     <div>
       <Router>
-        <Row>
-          <Col xs='2' className='sidebar' >
+        <Row className='col-sm-12' >
+          <Col xs='12'  className='sidebar  col-lg-2 col-sm-12' >
             <MyNavbar onChange={(event) => setSearched(event.target.value)} />
           </Col>
-          <Col >
+          
+          <Col xs='12 ' className='col-lg-10 col-sm-12' >
             <Switch>
               <Route exact path='/'>
                 {datas.filter((data) => {
                   if (searched === "") {
                     return data;
-                  } else if (data.title.toLowerCase().includes(searched.toLowerCase())) {
+                  }
+                  else  if (data.title.toLowerCase().includes(searched.toLowerCase())) {
                     return data;
                   }
                   else{
-                    return data;
-
+                    return null;
                   }
+                  
                 }).map((data) =>
                   <MyCard key={data.id} title={data.title} text={data.description} subtitle={data.ingredients.map(item => {
                     if (data.ingredients[data.ingredients.length - 1] !== item) {
@@ -51,7 +53,7 @@ function App() {
                     return data;
                   }
                   else{
-                    return data;
+                    return null;
                   }
                 }).map((data) =>
                   <MyCard key={data.id} title={data.title} text={data.description} subtitle={data.ingredients.map(item => {
@@ -73,7 +75,7 @@ function App() {
                       return data;
                     }
                     else{
-                      return data;
+                      return null;
                     }
                   }).map((data) =>
                     <MyCard key={data.id} title={data.title} text={data.description} subtitle={data.ingredients.map(item => {
@@ -95,7 +97,7 @@ function App() {
                       return data;
                     }
                     else{
-                      return data;
+                      return null;
                     }
                   }).map((data) =>
                     <MyCard key={data.id} title={data.title} text={data.description} subtitle={data.ingredients.map(item => {
